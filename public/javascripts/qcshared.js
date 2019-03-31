@@ -3,17 +3,21 @@ $(document).ready(function(){
     // Init the spinner
     var loading = $.loading();
 
-    // On page load, we want to load the latest quote
-    loading.open();
-    $.ajax({
-        method: "GET",
-        url: "https://mantraquote.azurewebsites.net/api/getLatestQuote?code=AI2vOgu85itS/WJ0EoNGamjmSfjEEMYT7VC6CGk4nrSW5gCgNYJ2Dg==",
-        dataType: "json"
-    })
-    .done(function(result){
-        loading.close();
-        populateDisplay(result , "Latest");
-    });
+    var is_root = location.pathname == "/"; 
+
+    if (is_root == true){
+        // On page load, we want to load the latest quote
+        loading.open();
+        $.ajax({
+            method: "GET",
+            url: "https://mantraquote.azurewebsites.net/api/getLatestQuote?code=AI2vOgu85itS/WJ0EoNGamjmSfjEEMYT7VC6CGk4nrSW5gCgNYJ2Dg==",
+            dataType: "json"
+        })
+        .done(function(result){
+            loading.close();
+            populateDisplay(result , "Latest");
+        });
+    }
 
     function populateDisplay(quote,searchType){
         // Update the interface

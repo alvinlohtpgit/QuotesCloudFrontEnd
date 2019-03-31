@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  .row 
+    .col-md-10.addquotepanel
+        form(method='POST' action='/add')
+            .form-group
+                label(for='message') Quote
+                input.form-control#message(type='text' name='message' placeholder='What\'s the quote ?' required='true')
+
+            .form-group
+                label(for='author') Author
+                input.form-control#author(type='text' name='author' placeholder='Quote\'s author')
+
+            .form-group
+                label(for='tags') Tags
+                input.form-control#tags(type='text' name='tags' placeholder='Enter tags separated by commas')
+
+            .form-group
+                label(for='submitter') Your Name
+                input.form-control#submitter(type='text' name='submitter' placeholder='Your name')
+            button.btn.btn-primary#cmdAdd(name='cmdAdd' value='Submit') Save Quote
+            button.btn.btn-secondary#cmdBack(name='cmdBack' value='Back') Cancel

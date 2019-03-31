@@ -9,6 +9,7 @@ var mainController = require('../controllers/mainController');
 // });
 
 router.get('/' , mainController.index);
-
+router.get('/add', mainController.addquote);
+router.post('/add', mainController.processAddquote);
 
 module.exports = router;
