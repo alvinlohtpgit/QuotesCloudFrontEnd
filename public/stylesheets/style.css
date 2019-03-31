@@ -1,5 +1,49 @@
 body {
   margin-top: 15px;
-  
+  font-family: 'Crimson Text', serif;
 }
 
+.btn{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.6em;
+}
+
+.pagetitle{
+  margin-top: 25px;
+  font-size: 1.2em;
+}
+
+.quotebody{
+  margin-top: 30px;
+  font-weight: 600;
+  font-size: 2.3em;
+}
+
+.quoteauthorpanel{
+  margin-top: 8px;
+}
+
+.quoteauthor{
+  font-weight: 400;
+  font-size: 1.4em;
+}
+
+.quotetags{
+  margin-top: 9px;
+  font-size: 0.8em;
+  color:#848484;
+}
+
+.quotesubmitter{
+  font-size: 0.8em;
+  color:#6d6d6d;
+}
+
+.instructionpanel{
+  margin-top: 25px;
+  font-size: 1.3em;
+}
+
+.btn-secondary{
+  margin-left: 6px;
+}

@@ -1,5 +1,28 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .row
+    .col-md-12.text-center.pagetitle
+      | Latest Quote on QuotesCloud
+  
+  .row.text-center
+    .offset-md-1.col-md-10.text-center.quotebody
+      | Loading ... 
+    .offset-md-1.col-md-10.text-right.quoteauthorpanel
+      .quoteauthor 
+        | -
+      .quotetags 
+        | -
+      .quotesubmitter
+        | -
+
+  .row.instructionpanel
+    .col-md-12.text-center
+      br
+      a#randomquotelink.btn.btn-secondary(href='#') Random Quote      
+      a.btn.btn-secondary#latestquotelink(href='#') Latest Quote
+      br
+      | or 
+      br
+      a.btn.btn-primary#addquote(href='#') Add a Quote
+      
