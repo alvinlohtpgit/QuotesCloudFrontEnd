@@ -60,10 +60,17 @@ $(document).ready(function(){
     });
 
     
-    $("a#addquote").click(function(){
-        alert('Not implemented yet');
+
+    // Clicked on the add name button
+   /* $('#cmdAdd').click(function(){
+         // Get all the posted variables
+    var posted_Message = req.body.message;
+    var posted_Author = req.body.author;
+    var posted_Tags = req.body.tags;
+    var posted_Submitter = req.body.submitter;
     });
 
+    */
     // Click on the latest quote button
     $('a#latestquotelink').click(function(){
        

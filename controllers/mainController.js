@@ -1,3 +1,5 @@
+var request = require('request');
+
 exports.index = function(req , res){
     res.render('index');
 }
@@ -7,7 +9,8 @@ exports.addquote = function(req, res){
 }
 
 exports.processAddquote = function(req , res){
-
+    console.log("Called process Add quote ");
+   
     // Get all the posted variables
     var posted_Message = req.body.message;
     var posted_Author = req.body.author;
@@ -36,6 +39,28 @@ exports.processAddquote = function(req , res){
         quotePayload.submitter = posted_Submitter;
     }
 
-    
+    // Push an async record to request
+    var azureAddFunctionURL = 'https://mantraquote.azurewebsites.net/api/writeToCloudDB?code=aypaxgB4ChpVa/VE84qtXTkM8H4Mv1tRTpCr0VfC7jEf49EjbsCZbw==';
 
+    var options = {
+        method: 'POST',
+        body: quotePayload,
+        json: true,
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        url: azureAddFunctionURL
+    }
+   
+    
+    request(options, function (err, response){
+        if (err){
+            console.log("Err posting : " + err);
+        }
+        console.log("Add successful");
+        console.log("Response : " + JSON.stringify(response));
+        // done posting, redirect to the main page
+        res.redirect('/');
+    });
+    
 }
