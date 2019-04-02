@@ -12,4 +12,12 @@ router.get('/' , mainController.index);
 router.get('/add', mainController.addquote);
 router.post('/add', mainController.processAddquote);
 
+router.get('/about', function(req,res){
+    res.render('about');
+});
+
+router.get('/api', function(req, res){
+    res.render('api');
+});
+
 module.exports = router;
